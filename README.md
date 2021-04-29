@@ -1,7 +1,7 @@
-quilt-loader
+Tanuki Loader
 ===========
 
-The loader for mods under Quilt. It provides mod loading facilities and useful abstractions for other mods to use.
+The loader for mods under Tanuki Engine, based off Quilt.
 
 ## License
 
