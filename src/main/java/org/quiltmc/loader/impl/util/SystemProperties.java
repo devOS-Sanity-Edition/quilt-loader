@@ -23,6 +23,9 @@ public final class SystemProperties {
 	public static final String GAME_VERSION = "quilt.gameVersion";
 	public static final String REMAP_CLASSPATH_FILE = "quilt.remapClasspathFile";
 	public static final String LAUNCHER_NAME = "quilt.launcherName";
+	public static final String DEBUG_MOD_RESOLVING = "quilt.debug.mod_resolving";
+	public static final String MODS_DIRECTORY = "quilt.modsDir";
+	public static final String CONFIG_DIRECTORY = "quilt.configDir";
 
 	private SystemProperties() {
 	}

@@ -43,7 +43,15 @@ public final class DependencyOverrides {
 	private final Map<String, Map<String, Map<String, ModDependency>>> dependencyOverrides;
 
 	private DependencyOverrides() {
-		Path path = QuiltLoaderImpl.INSTANCE.getConfigDir().resolve("fabric_loader_dependencies.json");
+		Path configDir = QuiltLoaderImpl.INSTANCE.getConfigDir();
+
+		if (configDir == null) {
+			exists = false;
+			dependencyOverrides = Collections.emptyMap();
+			return;
+		}
+
+		Path path = configDir.resolve("fabric_loader_dependencies.json");
 		exists = Files.exists(path);
 
 		if (!exists) {
@@ -51,7 +59,7 @@ public final class DependencyOverrides {
 			return;
 		}
 
-		try (JsonReader reader = JsonReader.createStrict(new InputStreamReader(Files.newInputStream(path), StandardCharsets.UTF_8))) {
+		try (JsonReader reader = JsonReader.json(new InputStreamReader(Files.newInputStream(path), StandardCharsets.UTF_8))) {
 			dependencyOverrides = parse(reader);
 		} catch (IOException | ParseMetadataException e) {
 			throw new RuntimeException("Failed to parse " + path.toString(), e);

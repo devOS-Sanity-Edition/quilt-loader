@@ -21,11 +21,11 @@
         "url": "https://maven.quiltmc.org/repository/release/"
       },
       {
-        "name": "org.quiltmc:quilt-loader-sat4j:2.3.5",
+        "name": "org.quiltmc:quilt-loader-sat4j:2.3.5.1",
         "url": "https://maven.quiltmc.org/repository/release/"
       },
       {
-        "name": "org.quiltmc:quilt-json5:1.0.0-rc.3",
+        "name": "org.quiltmc:quilt-json5:1.0.0",
         "url": "https://maven.quiltmc.org/repository/release/"
       },
       {
